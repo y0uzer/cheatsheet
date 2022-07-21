@@ -23,5 +23,5 @@ After locating the exploit, copy it into the current directory.
 
 ## Recon
 Let's look for those open ports and export the output to a specified directory using `nmap`.
->`nmap -sV -sC -vv -oN ./scan 10.10.104.36
+>`nmap -sV -sC -vv -oN ./scan 10.10.104.36`
 
