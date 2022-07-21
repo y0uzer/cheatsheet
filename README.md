@@ -1,10 +1,14 @@
 # Pentester's Cheat Sheet
 
-### Basic Linux Commands
-> List directory and show hiddend files:
-```$ ls -la```
+## Basic Linux Commands
+> List directory, show hidden, and permissions files:
+```$_ ls -la```
+
+> Need to find SUID bit? 
+`find / -perm /4000`
 
 
-### SearchSploit
+## SearchSploit
 > After locating the exploit, copy it into the current directory:
-```$ searchsploit -m [exploit_file_path]```
+
+`$_ searchsploit -m [exploit_file_path]`
