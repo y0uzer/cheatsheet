@@ -7,8 +7,11 @@ Quick reference guide to all things pentest.
 List directory, show hidden, and permissions files
 >`ls -la`
 
-Change Permissions for a file or directory
+Change Permissions for a file or directory:
 >`chmod ### file | directory`
+
+Another way of changing permissions over a directory is:
+> `chown [user_name] [dir]`
 
 Find files with SUID bit set
 >`find / -perm /4000`
