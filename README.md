@@ -96,7 +96,6 @@ sudo -l
 
 
 ## Random Tips & Tricks
-----
 ### RSA Keys
 ```
 # RSA Keys only like to be read by authenticated users. Be sure to change permissions to:
