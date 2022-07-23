@@ -76,7 +76,7 @@ Find files with SUID bit set:
 
 
 ## Random Tips & Tricks
-## RSA Keys
+### RSA Keys
 ```
 # RSA Keys only like to be read by authenticated users. Be sure to change permissions to:
 $ chmod 600 [RSA_Key_file_name]
