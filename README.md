@@ -6,7 +6,7 @@ Quick reference guide to all things pentest.
 ## Recon
 ### Nmap
 Let's look for those open ports and export the output to a specified directory using `nmap`.
-```
+```bash
 nmap -sV -sC -vv -oN ./scan [ip_address]
 ```
 
