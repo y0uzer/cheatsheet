@@ -38,7 +38,7 @@ For more information, check out LinPEAS Github: https://github.com/carlospolop/P
 ### Hydra
 Hydra is a parallelized login cracker which supports numerous protocols to attack. It is very fast and flexible, and new modules are easy to add.
 #### SSH
->`hydra -l [username] -P [wordlist] IP ssh`
+```hydra -l [username] -P [wordlist] IP ssh```
 
 John the Ripper is a tool designed to help systems administrators to find weak (easy to guess or crack through brute force) passwords, and even automatically mail users warning them about it, if it is desired.
 
