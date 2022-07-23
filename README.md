@@ -6,13 +6,13 @@ Quick reference guide to all things pentest.
 ## Recon
 ### Nmap
 Let's look for those open ports and export the output to a specified directory using `nmap`.
->`nmap -sV -sC -vv -oN ./scan 10.10.104.36`
+```nmap -sV -sC -vv -oN ./scan [ip_address]```
 
 ### SMBMap
 SMBMap allows users to enumerate samba share drives across an entire domain. List share drives, drive permissions, share contents, upload/download functionality, file name auto-download pattern matching, and even execute remote commands. This tool was designed with pen testing in mind, and is intended to simplify searching for potentially sensitive data across large networks.
->`smbmap -H 10.10.207.34`
+```smbmap -H [ip_address]```
 If an error is returned, try the `-u` switch and declare a username.
->`smbmap -H 10.10.207.34 -u test`
+```smbmap -H [ip_address] -u test```
 
 
 
@@ -60,18 +60,18 @@ Exploit Database Archive Search After locating the exploit, copy it into the cur
 
 ## Basic Linux Commands
 List directory, show hidden, and permissions files
->`ls -la`
+```ls -la```
 
 Change Permissions for a file or directory:
->`chmod ### [file] or [directory]`
+```chmod ### [file] or [directory]```
 
 Another way of changing permissions over a directory is:
-> `chown [user_name] [dir]`
+```chown [user_name] [dir]```
 
 Find files with SUID bit set:
->`find / -perm /4000`
-Or (if using is in sudoers file).
->`sudo -l`
+```find / -perm /4000```
+>Or (if using is in sudoers file).
+```sudo -l```
 
 
 
