@@ -9,6 +9,7 @@ Let's look for those open ports and export the output to a specified directory u
 ```
 nmap -sV -sC -vv -oN ./scan [ip_address]
 ```
+
 ### Dirb
 DIRB is a Web Content Scanner. It looks for existing (and/or hidden) Web Objects. It basically works by launching a dictionary based attack against a web server and analyzing the responses. DIRB’s main purpose is to help in professional web application auditing. 
 ```
@@ -49,12 +50,12 @@ For more information, check out LinPEAS Github: https://github.com/carlospolop/P
 ### Hydra
 Hydra is a parallelized login cracker which supports numerous protocols to attack. It is very fast and flexible, and new modules are easy to add.
 
-#### Hydra ssh
+> Hydra ssh
 ```
 hydra -l [username] -P [wordlist] [ip_address] ssh
 ```
 
-#### Hydra http-post-form
+> Hydra http-post-form
 ```
 hydra -l [username] -P [path_to_wordlist] [target_ip] http-post-form "/[directory]:[user_param]=^USER^&[password_param]=^PASS^:[error_message]"
 ```
@@ -64,12 +65,16 @@ John the Ripper is a tool designed to help systems administrators to find weak (
 
 Run private SSH key against ssh2john to produce a new hash file. Next, crack the hash using specified wordlist. This should provid 
 a password for password protected private keys. 
-#### ssh2john
-```
-ssh2john [key_id_rsa] > forjohn.txt
-john forjohn.txt --wordlist=[path to wordlist]
-```
 
+> ssh2john
+For password protected private keys, convert the RSA key into a readable hash file for John to crack. 
+```
+ssh2john [key_id_rsa] > [new_file_name]
+```
+> john
+```
+john [path_to_file] --wordlist=[path to wordlist]
+```
 
 
 ## Exploits
