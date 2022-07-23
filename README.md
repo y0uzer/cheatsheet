@@ -28,17 +28,17 @@ smbmap -H [ip_address] -u test
 
 
 ## Enumeration
-### Linpeas
+### LinPEAS
 LinPEAS is a script that search for possible paths to escalate privileges on Linux/Unix*/MacOS hosts.
 ```
 # 1. Copy over the LinPEAS script over OpenSSH using ~scp~ 
-$ scp [LinPEAS_file_path] [user]@[ip_address]:[file_path] <-- Psst! /dev/shm is a great place
+scp [LinPEAS_file_path] [user]@[ip_address]:[file_path] <-- Psst! /dev/shm is a great place
 
 # 2. Change directory to ensure file transfer was successful and set file as executable 
-$ chmod +x [file_name].sh
+chmod +x [file_name].sh
 
 # 3. Now its time to let LinPEAS work its magic and find some escalation vectors. Run the following:
-$ ./linpeas.sh | tee linlog.txt
+./linpeas.sh | tee linlog.txt
 
 For more information, check out LinPEAS Github: https://github.com/carlospolop/PEASS-ng/
 ```
