@@ -67,11 +67,12 @@ Run private SSH key against ssh2john to produce a new hash file. Next, crack the
 a password for password protected private keys. 
 
 > ssh2john
+
 For password protected private keys, convert the RSA key into a readable hash file for John to crack. 
 ```
 ssh2john [key_id_rsa] > [new_file_name]
 ```
-> john
+> John
 ```
 john [path_to_file] --wordlist=[path to wordlist]
 ```
