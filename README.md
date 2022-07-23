@@ -113,7 +113,7 @@ nc -lvp [port_number]
 
 ## Random Tips & Tricks
 ### RSA Keys
-RSA Keys only like to be read by authenticated users. Be sure to change permissions to:
+RSA Keys only like to be read by authenticated Users. Groups and others.. not so much. Be sure to change permissions to:
 ```
 chmod 600 [RSA_Key_file_name]
 ```
