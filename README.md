@@ -6,11 +6,11 @@ Quick reference guide to all things pentest.
 ## Recon
 ### Nmap
 Let's look for those open ports and export the output to a specified directory using `nmap`.
-```bash
+```
 nmap -sV -sC -vv -oN ./scan [ip_address]
 ```
 
-### SMBMap
+==SMBMap==
 SMBMap allows users to enumerate samba share drives across an entire domain. List share drives, drive permissions, share contents, upload/download functionality, file name auto-download pattern matching, and even execute remote commands. This tool was designed with pen testing in mind, and is intended to simplify searching for potentially sensitive data across large networks.
 ```
 smbmap -H [ip_address]
@@ -45,7 +45,7 @@ For more information, check out LinPEAS Github: https://github.com/carlospolop/P
 Hydra is a parallelized login cracker which supports numerous protocols to attack. It is very fast and flexible, and new modules are easy to add.
 #### SSH
 ```
-hydra -l [username] -P [wordlist] IP ssh
+hydra -l [username] -P [wordlist] [ip_address] ssh
 ```
 
 John the Ripper is a tool designed to help systems administrators to find weak (easy to guess or crack through brute force) passwords, and even automatically mail users warning them about it, if it is desired.
