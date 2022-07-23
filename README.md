@@ -59,6 +59,7 @@ hydra -l [username] -P [wordlist] [ip_address] ssh
 hydra -l [username] -P [path_to_wordlist] [target_ip] http-post-form "/[directory]:[user_param]=^USER^&[password_param]=^PASS^:[error_message]"
 ```
 
+### John
 John the Ripper is a tool designed to help systems administrators to find weak (easy to guess or crack through brute force) passwords, and even automatically mail users warning them about it, if it is desired.
 
 Run private SSH key against ssh2john to produce a new hash file. Next, crack the hash using specified wordlist. This should provid 
@@ -112,9 +113,9 @@ nc -lvp [port_number]
 
 ## Random Tips & Tricks
 ### RSA Keys
+RSA Keys only like to be read by authenticated users. Be sure to change permissions to:
 ```
-# RSA Keys only like to be read by authenticated users. Be sure to change permissions to:
-$ chmod 600 [RSA_Key_file_name]
+chmod 600 [RSA_Key_file_name]
 ```
 
 ### User Agents
