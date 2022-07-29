@@ -3,7 +3,7 @@ Quick reference guide to all things pentest.
 
 
 
-## Recon
+## Enumeration/Recon
 ### Nmap
 Let's look for those open ports and export the output to a specified directory using `nmap`.
 ```
@@ -26,9 +26,6 @@ If an error is returned, try the `-u` switch and declare a username.
 smbmap -H [ip_address] -u test
 ```
 
-
-
-## Enumeration
 ### LinPEAS
 LinPEAS is a script that search for possible paths to escalate privileges on Linux/Unix*/MacOS hosts.
 ```
