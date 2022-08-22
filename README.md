@@ -108,7 +108,7 @@ chown [user_name] [dir]
 
 - Find files with SUID bit set:
 ```
-find / -perm /4000
+find / -perm /4000 or find / -perm -u=s -type f 2>/dev/null
 ```
 > Or (if using is in sudoers file).
 ```
