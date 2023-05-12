@@ -73,7 +73,11 @@ ssh2john [key_id_rsa] > [new_file_name]
 ```
 john [path_to_file] --wordlist=[path to wordlist]
 ```
-
+### Stegcracker
+Steganography brute-force utility to uncover hidden data inside files.
+```
+stegcracker [path_to_image] [path_to_wordlist]
+```
 
 ## Exploits
 ### SearchSploit
