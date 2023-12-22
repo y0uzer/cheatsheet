@@ -63,6 +63,18 @@ hydra -l [username] -P [wordlist] [ip_address] ssh
 ```
 hydra -l [username] -P [path_to_wordlist] [target_ip] http-post-form "/[directory]:[user_param]=^USER^&[password_param]=^PASS^:[error_message]"
 ```
+### Crunch
+Crunch can create a wordlist based on criteria you specify.  The output from crunch can be sent to the screen, file, or to another program.
+```
+crunch 3 3 0123456789ABCDEF -o 3digits.txt
+```
+The command above specifies the following:
+- 3 the first number is the minimum length of the generated password
+- 3 the second number is the maximum length of the generated password
+- 0123456789ABCDEF is the character set to use to generate the passwords
+- 3digits.txt saves the output to the 3digits.txt file
+
+
 
 ### John
 John the Ripper is a tool designed to help systems administrators to find weak (easy to guess or crack through brute force) passwords, and even automatically mail users warning them about it, if it is desired.
