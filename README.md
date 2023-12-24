@@ -78,8 +78,6 @@ Command Above explained:
 - `pin=^PASS^` will replace ^PASS^ with values from the password list
 - `Error_Message` indicates that invalid passwords will lead to a page that contains the text “Access denied”
 - `-s 8000` indicates the port number on the target
-
-
 ### Crunch
 Crunch can create a wordlist based on criteria you specify.  The output from crunch can be sent to the screen, file, or to another program.
 ```
@@ -90,7 +88,12 @@ The command above specifies the following:
 - 3 the second number is the maximum length of the generated password
 - 0123456789ABCDEF is the character set to use to generate the passwords
 - 3digits.txt saves the output to the 3digits.txt file
-
+### Crunch
+- Specify spidering depth: The ```-d``` option allows you to set how deep CeWL should spider. For example, to spider two links deep: ```cewl http://10.10.203.161 -d 2 -w output1.txt```
+- Set minimum and maximum word length: Use the -m and -x options respectively. For instance, to get words between 5 and 10 characters: ```cewl http://10.10.203.161 -m 5 -x 10 -w output2.txt```
+- Handle authentication: If the target site is behind a login, you can use the ```-a``` flag for form-based authentication.
+- Custom extensions: The ```--with-numbers``` option will append numbers to words, and using ```--extension``` allows you to append custom extensions to each word, making it useful for directory or file brute-forcing.
+- Follow external links: By default, CeWL doesn't spider external sites, but using the ```--offsite``` option allows you to do so.
 
 
 ### John
