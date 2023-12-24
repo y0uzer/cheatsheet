@@ -88,7 +88,7 @@ The command above specifies the following:
 - 3 the second number is the maximum length of the generated password
 - 0123456789ABCDEF is the character set to use to generate the passwords
 - 3digits.txt saves the output to the 3digits.txt file
-### cewl
+### CeWL
 - Specify spidering depth: The ```-d``` option allows you to set how deep CeWL should spider. For example, to spider two links deep: ```cewl http://10.10.203.161 -d 2 -w output1.txt```
 - Set minimum and maximum word length: Use the -m and -x options respectively. For instance, to get words between 5 and 10 characters: ```cewl http://10.10.203.161 -m 5 -x 10 -w output2.txt```
 - Handle authentication: If the target site is behind a login, you can use the ```-a``` flag for form-based authentication.
